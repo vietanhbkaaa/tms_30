@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    base_title: "Framgia Test App System"
+  views:
+    layouts:
+      rails: "Rails Tutorial"
+      author: "by Michael Hartl"
+      news: "News"
+      signin: "Sign in"
+      testapp: "test app"
+    pages:
+      about_us: "About Us"
+      about: "About"
+      contact: "Contact"
+      help: "Help"
+      home: "Home"
+      welcome: "Welcome to the Test App"
+      notice: "This is the home page for the test application"
+      signup: "Sign up now!"

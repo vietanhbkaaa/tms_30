@@ -28,7 +28,8 @@ en:
       author: "by Michael Hartl"
       news: "News"
       signin: "Sign in"
-      testapp: "test app"
+      signup: "Sign up"
+      testapp: "Test App"
     pages:
       about_us: "About Us"
       about: "About"

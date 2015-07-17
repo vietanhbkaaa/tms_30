@@ -37,4 +37,13 @@ en:
       home: "Home"
       welcome: "Welcome to the Test App"
       notice: "This is the home page for the test application"
+      signup: "Signup"
+      login: "Login"
+    actions:
+      done: "Done"
+      is_forgot: "Forgot your password?"
       signup: "Sign up now!"
+      login: "Login"
+    messages:
+      send_reset_pw: "Send me reset password instructions"
+      min_chars: "characters minimum"

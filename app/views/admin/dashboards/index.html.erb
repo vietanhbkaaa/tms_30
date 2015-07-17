@@ -1,0 +1,21 @@
+<% provide :title, t("views.pages.dashboard") %>
+
+<h1 class="text-info"><%= t "views.messages.welcome_admin" %></h1>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <a href="#">
+      <span class="glyphicon glyphicon-user object-icon"><%= @users_count %></span>
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="#">
+      <span class="glyphicon glyphicon-list-alt object-icon"><%= @courses_count %></span>
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="">
+      <span class="glyphicon glyphicon-file object-icon"><%= @subjects_counts %></span>
+    </a>
+  </div>
+</div>

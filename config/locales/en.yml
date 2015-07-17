@@ -40,11 +40,14 @@ en:
       notice: "This is the home page for the test application"
       signup: "Signup"
       login: "Login"
+      dashboard: "Dashboard"
     actions:
       done: "Done"
       is_forgot: "Forgot your password?"
       signup: "Sign up now!"
       login: "Login"
+      logout: "Logout"
     messages:
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"
+      welcome_admin: "Welcome to TMS's dashboard !"

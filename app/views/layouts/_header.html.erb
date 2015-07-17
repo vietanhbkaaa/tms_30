@@ -10,8 +10,14 @@
       <a><%= link_to t("views.pages.help"), help_path %></a>
     </nav>
     <nav class="pull-right">
-      <a><%= link_to t("views.layouts.signin"), "#" %></a>
-      <a><%= link_to t("views.layouts.signup"), "#" %></a>
+      <% if user_signed_in? %>
+        <%= current_user.name %>
+        <a><%= link_to t("views.layouts.logout"), destroy_user_session_path,
+          method: "delete" %></a>
+      <% else %>
+        <a><%= link_to t("views.layouts.signin"), new_user_session_path %></a>
+        <a><%= link_to t("views.layouts.signup"), "#" %></a>
+      <% end %>
     </nav>
   </div>
 </header>

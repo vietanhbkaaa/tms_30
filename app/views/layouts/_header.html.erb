@@ -1,12 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t("views.layouts.testapp"), root_path, id: "logo" %>
+<header class="header-fixed header-login-signup">
+  <div class="header-limiter">
+    <h1>
+      <a>
+        <%= image_tag Settings.views.logo.url, size: Settings.views.logo.size_image %>
+      </a>
+    </h1>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("views.pages.home"), root_path %></li>
-        <li><%= link_to t("views.pages.help"), help_path %></li>
-        <li><%= link_to t("views.layouts.signin"), "#" %></li>
-      </ul>
+      <a><%= link_to t("views.pages.home"), root_path %></a>
+      <a><%= link_to t("views.pages.help"), help_path %></a>
+    </nav>
+    <nav class="pull-right">
+      <a><%= link_to t("views.layouts.signin"), "#" %></a>
+      <a><%= link_to t("views.layouts.signup"), "#" %></a>
     </nav>
   </div>
 </header>

@@ -1,0 +1,18 @@
+<tr>
+  <td class="text-center">
+    <b><%= subject.name %></b><br>
+    <%= pluralize subject.tasks.count, t("views.task") %>
+  </td>
+  <td>
+    <b><%= t "subjects.description" %></b> : <%= subject.description %>
+    <hr>
+    <% subject.tasks.each_with_index do |task, index| %>
+      [<%= index + 1  %>]
+      <span class="glyphicon glyphicon-tags text-info"></span>
+      &nbsp;<%= task.name %>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+    <% end %>
+  </td>
+  <td><input type="checkbox"></td>
+  <td><%= link_to "", "#", class: "glyphicon glyphicon-edit" %></td>
+</tr>

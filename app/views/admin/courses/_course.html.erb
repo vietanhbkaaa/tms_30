@@ -1,0 +1,19 @@
+<tr>
+  <td class="text-center">
+    <b><%= link_to course.name, "#" %></b><br>
+    <%= pluralize course.course_subjects.count, t("views.subject") %><br>
+    <%= pluralize course.user_courses.count, t("views.user") %>
+  </td>
+  <td>
+    <b><%= t "courses.description" %></b> : <%= course.description %>
+  </td>
+  <td>
+    <%= course.created_at.strftime(Settings.date_format) %>
+  </td>
+  <td class="text-center">
+    <b><%= pluralize course.date_duration, t("views.unit.day") %><b><br>
+    <span class="badge"><%= t "views.messages.closed" if course.closed? %></span>
+  </td>
+  <td><input type="checkbox"></td>
+  <td><%= link_to "", "#", class: "glyphicon glyphicon-edit" %></td>
+</tr>

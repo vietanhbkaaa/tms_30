@@ -11,5 +11,9 @@ subjects:
   max_c: 255
   users:
     per_page: 10
-created_at: "%Y/%m/%d"
-update_at: "%B %e %Y"
+courses:
+  per_page: 5
+  is_present: true
+  min_c: 2
+  max_c: 255
+date_format: "%d/%m/%Y"

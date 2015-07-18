@@ -12,10 +12,6 @@ class Course < ActiveRecord::Base
   validates :name, presence: Settings.courses.is_present,
     length: {minimum: Settings.courses.min_c, maximum: Settings.courses.max_c}
 
-  after_create {self.log_create :create}
-  after_update {self.log_create :update}
-  after_destroy {self.log_create :destroy}
-
   def date_duration
     self.subjects.inject(0){|total_date, subject| total_date + subject.date_duration}
   end

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @course, url: supervisor_course_assign_trainees_path do |f| %>
+      <h2><%= t "views.messages.update_course_trainees" %></h2>
+      <%= hidden_field_tag "course[user_ids][]" %>
+      <table class="table">
+        <% @users.each do |user| %>
+          <tr>
+            <td class="text-info"><b><%= user.name %></b></td>
+            <td>
+              <%= f.check_box :user_ids, {name: "course[user_ids][]",
+                checked: @course.has_trainee?(user)}, user.id, nil %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <div class="actions">
+        <%= f.submit t("views.actions.done"), class: "btn btn-success btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>

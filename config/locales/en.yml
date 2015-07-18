@@ -71,6 +71,7 @@ en:
       set_admin: "Set admin"
       add: "Add"
       search: "Search"
+      manage: "Manage"
     messages:
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"
@@ -98,6 +99,9 @@ en:
       confirm: "You sure?"
       not_permission: "not permission"
       have_id: "have id: "
+      update_course_subject: "Update the course's subjects"
+      update_course_trainees: "Update the course's trainees"
+      update_course_supervisors: "Update the course's supervisors"
     unit:
       hour: "hour"
       day: "day"

@@ -13,4 +13,16 @@ class Course < ActiveRecord::Base
   def date_duration
     self.subjects.inject(0){|total_date, subject| total_date + subject.date_duration}
   end
+
+  def has_trainee? user
+    self.users.include? user
+  end
+
+  def has_supervisor? user
+    self.supervisors.include? user
+  end
+
+  def has_member? user
+    has_trainee?(user) || has_supervisor?(user)
+  end
 end

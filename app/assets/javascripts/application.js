@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  last_btn = $(".btn-subject").last();
+  last_btn.next("span").remove();
+});

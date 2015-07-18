@@ -1,6 +1,6 @@
 <tr>
   <td class="text-center">
-    <b><%= link_to course.name, "#" %></b><br>
+    <b><%= link_to course.name, admin_course_path(course) %></b><br>
     <%= pluralize course.course_subjects.count, t("views.subject") %><br>
     <%= pluralize course.user_courses.count, t("views.user") %>
   </td>

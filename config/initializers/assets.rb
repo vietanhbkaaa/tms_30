@@ -4,6 +4,7 @@
 Rails.application.config.assets.version = "1.0"
 Rails.application.config.assets.precompile += %w(header_fixed.js)
 Rails.application.config.assets.precompile += %w(header_search.js)
+Rails.application.config.assets.precompile += %w(remove_field.js)
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

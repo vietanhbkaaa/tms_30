@@ -17,3 +17,4 @@ courses:
   min_c: 2
   max_c: 255
 date_format: "%d/%m/%Y"
+option_lines: 10

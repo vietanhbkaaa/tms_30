@@ -74,6 +74,8 @@ en:
       update_successfully: "Update successfully !"
       destroy_success: "Destroy successfully !"
       destroy_unsuccess: "Destroy unsuccessfully !"
+      delete_successfully: "Delete successfully !"
+      delete_failed: "Delete failed !"
       del_confirm_msg: "Are you sure to remove this item ?"
       submit: "Submit"
       confirmation: "Confirmation"

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resources :subjects, except: [:show]
     resources :users, only: [:index, :new, :create]
-    resources :courses, only: [:index]
+    resources :courses, only: [:index, :destroy]
   end
 
   devise_for :users, path: "", path_names: {

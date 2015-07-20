@@ -1,0 +1,21 @@
+<br>
+<div class="row text-success">
+  <div class="col-md-9">
+    <table class="table">
+      <tr>
+        <th class="text-center col-md-2"><%= t "subjects.name" %></th>
+        <th class="text-center"><%= t "views.messages.detail" %></th>
+        <th><input type="checkbox" id="check-all"></th>
+        <th><%= t "subjects.edit" %></th>
+      </tr>
+      <%= render @subjects %>
+    </table>
+    <%= will_paginate %>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-success">
+      <span class="glyphicon glyphicon-plus"></span>
+      <%= t "views.actions.create_more" %>
+    </button>
+  </div>
+</div>

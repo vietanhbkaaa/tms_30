@@ -2,5 +2,17 @@
 @import "bootstrap";
 
 .object-icon{
-  font-size: 80px
+  font-size: 80px;
+}
+
+.no-border{
+  border: none;
+}
+
+textarea{
+  resize: vertical;
+}
+
+a.text-white{
+  color: white; 
 }

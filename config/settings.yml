@@ -2,3 +2,6 @@ views:
   logo:
     size_image: "80x50"
     url: "images.jpg"
+subjects:
+  per_page: 5
+  min_date_duration: 1

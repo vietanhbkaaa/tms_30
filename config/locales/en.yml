@@ -41,13 +41,28 @@ en:
       signup: "Signup"
       login: "Login"
       dashboard: "Dashboard"
+      admin_subjects: "Subjects Management"
     actions:
       done: "Done"
       is_forgot: "Forgot your password?"
       signup: "Sign up now!"
       login: "Login"
       logout: "Logout"
+      edit: "Edit"
+      detele: "Delete"
+      create_more: "Create more"
     messages:
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"
       welcome_admin: "Welcome to TMS's dashboard !"
+      time_limit: "Time duration: "
+      create_new_subject: "Create new subject"
+      detail: "Detail"
+    unit:
+      hour: "hour"
+    task: task
+  subjects:
+    name: "Name"
+    information: "Information"
+    description: "Description"
+    description_placeholder: "Write something to show what this subject is ..."

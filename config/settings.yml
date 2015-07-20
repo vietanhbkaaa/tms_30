@@ -5,3 +5,7 @@ views:
 subjects:
   per_page: 5
   min_date_duration: 1
+  num_of_created_tasks: 5
+  is_present: true
+  min_c: 2
+  max_c: 255

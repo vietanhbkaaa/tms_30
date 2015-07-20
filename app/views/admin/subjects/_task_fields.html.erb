@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= f.text_field :name, class: "form-control",
+      placeholder: t("tasks.name_placeholder") %>
+  </td>
+  <td>
+    <%= f.text_area :description, class: "form-control",
+      placeholder: t("tasks.description_placeholder") %>
+  </td>
+  <td>
+    <%= link_to_remove_fields t("views.actions.remove"), f %>
+  </td>
+</tr>

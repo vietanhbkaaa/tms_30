@@ -1,0 +1,36 @@
+<%= form_for [:admin, subject] do |f| %>
+  <%= render "shared/error_messages", object: subject %>
+  <div class="field">
+    <%= f.label :name, class: "text-info" %><br>
+    <%= f.text_field :name, autofocus: true, class: "form-control",
+      placeholder: t("subjects.name_placeholder") %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "text-info" %>
+    <%= f.text_area :description, class: "form-control",
+      placeholder: t("subjects.description_placeholder") %>
+  </div>
+  <div class="field">
+    <%= f.label :date_duration, class: "text-info" %>
+    <%= f.number_field :date_duration, class: "form-control",
+      min: Settings.subjects.min_date_duration,
+      value: Settings.subjects.min_date_duration %>
+  </div>
+  <h2>Add tasks in this subject</h2>
+  <div class="field">
+    <table class="table" data-confirm-msg="<%= t("views.messages.del_confirm_msg") %>"> 
+      <tbody>
+        <%= f.fields_for :tasks do |builder| %>
+          <%= render "task_fields", :f => builder %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <span class="glyphicon glyphicon-plus"></span>
+  <%= link_to_add_fields t("views.actions.create_more"), f, :tasks %>
+  <div class="actions">
+    <%= f.submit t("views.actions.done"), class: "btn btn-success btn-block" %>
+  </div>
+<% end %>
+
+<%= javascript_include_tag "remove_field", "data-turbolinks-track" => true %>

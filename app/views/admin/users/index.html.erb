@@ -1,8 +1,8 @@
-<% provide :title, t("views.pages.user") %>
+<% provide :title, t("views.pages.users") %>
 
 <div class="row">
   <aside class="col-md-8">
-    <h1><%= t "views.pages.user" %></h1>
+    <h1><%= t "views.pages.users" %></h1>
     <table class="table table-bordered table-hover">
       <tr>
         <th><%= t "users.id" %></th>
@@ -22,5 +22,9 @@
       <% end %>
     </table>
     <%= will_paginate %>
+  </aside>
+  <aside class="col-md-4">
+    <br>
+    <%= link_to t("messeager.create_new_user"), new_admin_user_path, class: "btn btn-primary" %>
   </aside>
 </div>

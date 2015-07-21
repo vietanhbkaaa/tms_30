@@ -50,6 +50,7 @@ en:
       login: "Login"
       dashboard: "Dashboard"
       admin_subjects: "Subjects Management"
+      admin_courses: "Courses Management"
     actions:
       done: "Done"
       is_forgot: "Forgot your password?"
@@ -74,9 +75,16 @@ en:
       del_confirm_msg: "Are you sure to remove this item ?"
       submit: "Submit"
       confirmation: "Confirmation"
+      closed: "CLOSED"
+      add_task_to_subject: "Add tasks in this subject"
+      add_subject_to_course: "Add subjects in this course"
     unit:
       hour: "hour"
-    task: task
+      day: "day"
+    task: "task"
+    course: "course"
+    subject: "subject"
+    user: "user"
   subjects:
     name: "Name"
     information: "Information"
@@ -86,3 +94,11 @@ en:
   tasks:
     name_placeholder: "Enter the task name ..."
     description_placeholder: "What is this task's purpose ?"
+  courses:
+    name: "Name"
+    information: "Information"
+    description: "Description"
+    name_placeholder: "What's the course's name ?"
+    description_placeholder: "Write something to show what this course is ..."
+    time_duration: "Time duration"
+    start_start: "Start date"

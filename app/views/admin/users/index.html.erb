@@ -1,4 +1,4 @@
-<% provide :title, t("views.pages.users") %>
+ <% provide :title, t("views.pages.users") %>
 
 <div class="row">
   <aside class="col-md-8">
@@ -16,8 +16,8 @@
           <td><%= user.id %></td>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
-          <td><%= user.created_at.strftime(Settings.created_at) %></td>
-          <td><%= user.updated_at.strftime(Settings.update_at) %></td>
+          <td><%= user.created_at.strftime(Settings.date_format) %></td>
+          <td><%= user.updated_at.strftime(Settings.date_format) %></td>
         </tr>
       <% end %>
     </table>

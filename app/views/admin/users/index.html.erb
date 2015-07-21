@@ -18,6 +18,11 @@
           <td><%= user.email %></td>
           <td><%= user.created_at.strftime(Settings.date_format) %></td>
           <td><%= user.updated_at.strftime(Settings.date_format) %></td>
+          <td>
+            <%= link_to t("views.actions.delete"), admin_user_path(user),
+              method: :delete, data: {confirm: t("views.messages.confirm")},
+              class: "btn btn-primary" %>
+          </td>
         </tr>
       <% end %>
     </table>

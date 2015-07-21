@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  users:
+    id: "ID"
+    name: "Name"
+    email: "Email"
+    created: "Created at"
+    updated: "Updated at"
   helpers:
     base_title: "Framgia Test App System"
   views:
@@ -31,6 +37,7 @@ en:
       signup: "Sign up"
       testapp: "Test App"
     pages:
+      user: "Users"
       about_us: "About Us"
       about: "About"
       contact: "Contact"

@@ -4,9 +4,7 @@
 <hr>
 <div class="row">
   <div class="col-md-4">
-    <a href="#">
-      <span class="glyphicon glyphicon-user object-icon"><%= @users_count %></span>
-    </a>
+    <%= link_to @users_count, admin_users_path, class: "glyphicon glyphicon-user object-icon" %>
   </div>
   <div class="col-md-4">
     <a href="#">

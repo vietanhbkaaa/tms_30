@@ -1,0 +1,26 @@
+<% provide :title, t("views.pages.user") %>
+
+<div class="row">
+  <aside class="col-md-8">
+    <h1><%= t "views.pages.user" %></h1>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th><%= t "users.id" %></th>
+        <th><%= t "users.name" %></th>
+        <th><%= t "users.email" %></th>
+        <th><%= t "users.created" %></th>
+        <th><%= t "users.updated" %></th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr data-link="<%= admin_users_path(user) %>">
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at.strftime(Settings.created_at) %></td>
+          <td><%= user.updated_at.strftime(Settings.update_at) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate %>
+  </aside>
+</div>

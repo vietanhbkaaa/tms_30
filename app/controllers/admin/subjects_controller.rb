@@ -11,7 +11,7 @@ class Admin::SubjectsController < ApplicationController
     @task = @subject.tasks.build
   end
 
-  def edit    
+  def edit
   end
 
   def create

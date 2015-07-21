@@ -1,0 +1,18 @@
+<%= form_for [:admin, user] do |f| %>
+  <%= render "shared/error_messages", object: user %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, t("views.messages.confirmation") %>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+
+  <%= f.file_field :avatar, id: "user_avatar" %>
+
+  <%= f.submit t("views.messages.submit"), class: "btn btn-primary" %>
+<% end %>

@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :courses, through: :user_courses
   has_many :subjects, through: :user_subjects
   has_many :tasks, through: :user_tasks
+  scope :recent, ->{order created_at: :desc}
 end

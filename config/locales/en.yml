@@ -37,7 +37,8 @@ en:
       signup: "Sign up"
       testapp: "Test App"
     pages:
-      user: "Users"
+      user: "User"
+      users: "Users"
       about_us: "About Us"
       about: "About"
       contact: "Contact"
@@ -65,11 +66,14 @@ en:
       welcome_admin: "Welcome to TMS's dashboard !"
       time_limit: "Time duration: "
       create_new_subject: "Create new subject"
+      create_new_user: "Create new user"
       update_subject: "Update the subject"
       detail: "Detail"
       create_successfully: "Create successfully !"
       update_successfully: "Update successfully !"
       del_confirm_msg: "Are you sure to remove this item ?"
+      submit: "Submit"
+      confirmation: "Confirmation"
     unit:
       hour: "hour"
     task: task

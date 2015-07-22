@@ -1,0 +1,6 @@
+<%= form_for [:admin, user] do |f| %>
+  <%= f.hidden_field :admin, value: true , class: "form-control" %>
+
+  <%= f.submit t("views.actions.set_admin"), class: "btn btn-primary",
+    data: {confirm: t("views.messages.confirm_admin")} %>
+<% end %>

@@ -10,6 +10,8 @@
         <th><%= t "users.email" %></th>
         <th><%= t "users.created" %></th>
         <th><%= t "users.updated" %></th>
+        <th><%= t "views.actions.delete" %></th>
+        <th><%= t "views.actions.set_admin" %></th>
       </tr>
       <% @users.each do |user| %>
         <tr data-link="<%= admin_users_path(user) %>">
@@ -23,6 +25,7 @@
               method: :delete, data: {confirm: t("views.messages.confirm")},
               class: "btn btn-primary" %>
           </td>
+          <td><%= render "form_edit", user: user unless user.admin? %></td>
         </tr>
       <% end %>
     </table>
@@ -30,6 +33,6 @@
   </aside>
   <aside class="col-md-4">
     <br>
-    <%= link_to t("messeager.create_new_user"), new_admin_user_path, class: "btn btn-primary" %>
+    <%= link_to t("views.messeager.create_new_user"), new_admin_user_path, class: "btn btn-primary" %>
   </aside>
 </div>

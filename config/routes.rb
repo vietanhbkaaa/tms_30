@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboards#index"
     resources :subjects, except: [:show]
-    resources :users, only: [:index, :new, :create]
+    resources :users, except: [:show]
     resources :courses, except: [:show, :edit, :update]
   end
 

@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :init_user, only: [:destroy]
+  before_action :init_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.recent.paginate page: params[:page],
@@ -20,8 +20,20 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "views.messages.update_successfully"
+    else
+      render :edit
+    end
+    redirect_to admin_users_path
+  end
+
   def destroy
-    if @user = @user.destroy
+    if @user.destroy
       flash[:success] = t "views.messages.destroy_success"
     else
       flash[:danger] = t "views.messages.destroy_unsuccess"
@@ -34,8 +46,8 @@ class Admin::UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  private
   def user_params
-    params.require(:user).permit :name, :email, :password, :password_confirmation, :avatar
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation, :avatar, :admin
   end
 end

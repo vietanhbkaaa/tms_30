@@ -13,6 +13,12 @@
       &nbsp; &nbsp; &nbsp; &nbsp;
     <% end %>
   </td>
-  <td><input type="checkbox"></td>
-  <td><%= link_to "", edit_admin_subject_path(subject), class: "glyphicon glyphicon-edit" %></td>
+  <td class="text-center">
+    <%= link_to "", admin_subject_path(subject), method: :delete,
+      data: {confirm: t("views.messages.del_confirm_msg")},
+      class: "glyphicon glyphicon-remove" %>
+  </td>
+  <td class="text-center">
+    <%= link_to "", edit_admin_subject_path(subject), class: "glyphicon glyphicon-edit" %>
+  </td>
 </tr>

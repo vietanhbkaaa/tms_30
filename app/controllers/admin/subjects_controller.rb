@@ -1,5 +1,5 @@
 class Admin::SubjectsController < ApplicationController
-  before_action :init_subject, only: [:edit, :update]
+  before_action :init_subject, only: [:edit, :update, :destroy]
 
   def index
     @subjects = Subject.recent.paginate page: params[:page],
@@ -32,6 +32,15 @@ class Admin::SubjectsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    if @subject.destroy
+      flash[:success] = t "views.messages.delete_successfully"
+    else
+      flash[:danger] = t "views.messages.delete_failed"
+    end
+    redirect_to admin_subjects_path
   end
 
   private

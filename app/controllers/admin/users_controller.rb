@@ -1,8 +1,9 @@
 class Admin::UsersController < ApplicationController
-  before_action :init_user, only: [:show]
+  before_action :init_user, only: [:destroy]
 
   def index
-    @users = User.recent.paginate page: params[:page], per_page: Settings.subjects.users.per_page
+    @users = User.recent.paginate page: params[:page],
+      per_page: Settings.subjects.users.per_page
   end
 
   def new
@@ -17,6 +18,15 @@ class Admin::UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    if @user = @user.destroy
+      flash[:success] = t "views.messages.destroy_success"
+    else
+      flash[:danger] = t "views.messages.destroy_unsuccess"
+    end
+    redirect_to admin_users_path
   end
 
   private

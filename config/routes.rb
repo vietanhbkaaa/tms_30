@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :courses, except: [:show, :edit, :update]
   end
 
+  resourse :user, only: :show
+
   devise_for :users, path: "", path_names: {
     sign_in: "login",
     sign_out: "logout"

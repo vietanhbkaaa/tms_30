@@ -1,0 +1,20 @@
+<table class="table">
+  <tr>
+    <td class="col-md-3">
+      <%= link_to image_tag("rails.png", size: Settings.views.user.size_image) %>
+    </td>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <td class="pull-right text-info">
+      <b><%= t "users.email" %> : </b>
+    </td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td class="pull-right text-info">
+      <b><%= t "users.join_date" %> : </b>
+    </td>
+    <td><%= @user.created_at.strftime(Settings.date_format) %></td>
+  </tr>
+</table>

@@ -11,12 +11,12 @@
     </nav>
     <nav class="pull-right">
       <% if user_signed_in? %>
-        <%= current_user.name %>
-        <a><%= link_to t("views.layouts.logout"), destroy_user_session_path,
-          method: "delete" %></a>
+        <%= link_to current_user.name, user_path(current_user) %>
+        <%= link_to t("views.layouts.logout"), destroy_user_session_path,
+          method: "delete" %>
       <% else %>
-        <a><%= link_to t("views.layouts.signin"), new_user_session_path %></a>
-        <a><%= link_to t("views.layouts.signup"), "#" %></a>
+        <%= link_to t("views.layouts.signin"), new_user_session_path %>
+        <%= link_to t("views.layouts.signup"), "#" %>
       <% end %>
     </nav>
   </div>

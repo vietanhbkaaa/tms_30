@@ -26,6 +26,8 @@ en:
     email: "Email"
     created: "Created at"
     updated: "Updated at"
+    join_date: "Join date"
+    participated_courses: "Participated courses"
   helpers:
     base_title: "Framgia Test App System"
   views:

@@ -38,6 +38,8 @@ en:
       signin: "Sign in"
       signup: "Sign up"
       testapp: "Test App"
+      settings: "Settings"
+      logout: "Logout"
     pages:
       user: "User"
       users: "Users"
@@ -73,6 +75,7 @@ en:
       create_new_user: "Create new user"
       create_new_course: "Start a new course"
       update_subject: "Update the subject"
+      update_user: "Update the user"
       detail: "Detail"
       create_successfully: "Create successfully !"
       update_successfully: "Update successfully !"

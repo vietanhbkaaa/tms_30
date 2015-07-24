@@ -6,12 +6,14 @@
       </a>
     </h1>
     <nav>
-      <a><%= link_to t("views.pages.home"), root_path %></a>
-      <a><%= link_to t("views.pages.help"), help_path %></a>
+      <%= link_to t("views.pages.home"), root_path %>
+      <%= link_to t("views.pages.help"), help_path %>
     </nav>
     <nav class="pull-right">
       <% if user_signed_in? %>
         <%= link_to current_user.name, user_path(current_user) %>
+        <%= link_to t("views.layouts.settings"), edit_user_path(current_user)
+          %>
         <%= link_to t("views.layouts.logout"), destroy_user_session_path,
           method: "delete" %>
       <% else %>

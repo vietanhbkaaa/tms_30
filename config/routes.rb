@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     root "dashboards#index"
     resources :subjects, except: [:show]
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
     resources :courses, except: [:edit, :update]
   end
 
-  resourse :user, only: :show
+  resources :users, only: [:show, :edit, :update]
 
   devise_for :users, path: "", path_names: {
     sign_in: "login",

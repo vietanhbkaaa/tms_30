@@ -104,6 +104,7 @@ en:
     name_placeholder: "Enter the task name ..."
     description_placeholder: "What is this task's purpose ?"
   courses:
+    supervisor: "Supervisor"
     name: "Name"
     information: "Information"
     description: "Description"
@@ -111,3 +112,4 @@ en:
     description_placeholder: "Write something to show what this course is ..."
     time_duration: "Time duration"
     start_start: "Start date"
+  trainee: "trainee"

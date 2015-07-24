@@ -1,5 +1,13 @@
 class Admin::CoursesController < ApplicationController
-  before_action :init_course, only: [:destroy]
+  before_action :init_course, only: [:show, :destroy]
+
+  def new
+    @subjects = Subject.all
+    @course = Course.new  
+  end
+
+  def show
+  end
 
   def new
     @subjects = Subject.all

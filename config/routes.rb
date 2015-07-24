@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resources :subjects, except: [:show]
     resources :users, except: [:show]
-    resources :courses, except: [:show, :edit, :update]
+    resources :courses, except: [:edit, :update]
   end
 
   resourse :user, only: :show

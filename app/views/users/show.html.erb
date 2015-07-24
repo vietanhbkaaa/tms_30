@@ -1,6 +1,19 @@
 <% provide :title, @user.name %>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <%= render "user_info" %>
+  </div>
+  <div class="col-md-4">
+    <h2 class="text-info"><%= t "views.pages.user_activities" %></h2>
+    <% if @user.activities.any? %>
+      <% @activities.each do |activity| %>
+        <br>
+        <%= activity.type_action %>
+        <%= activity.content %>
+        <%= t "views.messages.have_id" %>
+        <%= activity.target_id %>
+      <% end %>
+      <%= will_paginate @activities %>
+    <% end %>
   </div>
 </div>

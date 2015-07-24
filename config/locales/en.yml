@@ -28,6 +28,7 @@ en:
     updated: "Updated at"
     join_date: "Join date"
     participated_courses: "Participated courses"
+    histories_of_courses: "Histories of courses"
   helpers:
     base_title: "Framgia Test App System"
   views:
@@ -55,6 +56,8 @@ en:
       dashboard: "Dashboard"
       admin_subjects: "Subjects Management"
       admin_courses: "Courses Management"
+      admin_activities: "Admin activities"
+      user_activities: "User activities"
     actions:
       done: "Done"
       is_forgot: "Forgot your password?"
@@ -92,6 +95,8 @@ en:
       add_subject_to_course: "Add subjects in this course"
       you_arenot_member: "You are not this course's member !"
       confirm: "You sure?"
+      not_permission: "not permission"
+      have_id: "have id: "
     unit:
       hour: "hour"
       day: "day"

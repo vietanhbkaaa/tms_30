@@ -5,16 +5,20 @@ Rails.application.routes.draw do
     resources :subjects, except: [:show]
     resources :users, except: [:show]
     resources :courses, except: [:edit, :update]
+    resources :activities, only: [:index, :destroy]
   end
+
+  resources :users, only: [:show, :edit, :update]
+  resources :courses, only: :show
 
   devise_for :users, path: "", path_names: {
     sign_in: "login",
     sign_out: "logout"
   }
-  
+
   resources :users, only: [:show, :edit, :update]
   resources :courses, only: :show
-  
+
   root "static_pages#home"
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"

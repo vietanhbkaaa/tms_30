@@ -8,10 +8,7 @@ class Admin::CoursesController < ApplicationController
 
   def new
     @subjects = Subject.all
-    @course = Course.new  
-  end
-
-  def show
+    @course = Course.new
   end
 
   def create
@@ -23,6 +20,9 @@ class Admin::CoursesController < ApplicationController
       @subjects = Subject.all
       render :new
     end
+  end
+
+  def show
   end
 
   def destroy

@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t "views.messages.destroy_success"
+      flash[:success] = t "views.messages.delete_successfully"
     else
       flash[:danger] = t "views.messages.destroy_unsuccess"
     end

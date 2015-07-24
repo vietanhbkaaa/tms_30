@@ -17,4 +17,14 @@
     </td>
     <td><%= @user.created_at.strftime(Settings.date_format) %></td>
   </tr>
+  <tr>
+    <td class="pull-right text-info">
+      <b><%= t("users.courses_participate") %> : </b>
+    </td>
+    <div class="col-md-4 col-md-offset-2">
+      <% @user.courses.each do |course| %>
+        <td><%= link_to course.name, course_path(course) %></td>
+      <% end %>
+    </div>
+  </tr>
 </table>

@@ -1,0 +1,10 @@
+<% provide :title, t("views.pages.admin_activities") %>
+
+<h1><%= t "views.pages.admin_activities" %></h1>
+<% @activities.each do |log| %>
+  <br>
+  <%= log.type_action %> <%= t "views.messages.user_have_id" %>
+  <%= log.target_id %>
+  <%= link_to t("views.actions.delete"), [:admin, log], method: :delete, data: {confirm: t("views.messages.del_confirm_msg")} %>
+<% end %>
+<%= will_paginate %>

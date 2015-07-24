@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Logs
+
   devise :database_authenticatable, :rememberable, :trackable, :validatable
   has_many :user_courses, dependent: :destroy
   has_many :supervisor_courses, dependent: :destroy
@@ -10,4 +12,8 @@ class User < ActiveRecord::Base
   has_many :courses, through: :user_courses
   has_many :managing_courses, through: :supervisor_courses
   scope :recent, ->{order created_at: :desc}
+
+  after_create :log_create
+  after_update :log_update
+  after_destroy :log_destroy
 end

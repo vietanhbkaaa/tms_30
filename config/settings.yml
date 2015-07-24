@@ -20,3 +20,7 @@ courses:
   max_c: 255
 date_format: "%d/%m/%Y"
 option_lines: 10
+logs:
+  create: "create"
+  update: "update"
+  delete: "delete"

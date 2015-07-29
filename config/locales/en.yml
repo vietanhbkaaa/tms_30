@@ -66,6 +66,7 @@ en:
       create_more: "Create more"
       remove: "remove"
       set_admin: "Set admin"
+      add: "Add"
     messages:
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"
@@ -89,6 +90,7 @@ en:
       closed: "CLOSED"
       add_task_to_subject: "Add tasks in this subject"
       add_subject_to_course: "Add subjects in this course"
+      you_arenot_member: "You are not this course's member !"
       confirm: "You sure?"
     unit:
       hour: "hour"

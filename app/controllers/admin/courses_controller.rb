@@ -1,22 +1,17 @@
 class Admin::CoursesController < ApplicationController
   before_action :init_course, only: [:show, :destroy]
 
+  def index
+    @courses = Course.recent.paginate page: params[:page],
+      per_page: Settings.courses.per_page
+  end
+
   def new
     @subjects = Subject.all
     @course = Course.new  
   end
 
   def show
-  end
-
-  def new
-    @subjects = Subject.all
-    @course = Course.new  
-  end
-
-  def index
-    @courses = Course.recent.paginate page: params[:page],
-      per_page: Settings.courses.per_page
   end
 
   def create

@@ -1,0 +1,81 @@
+<% provide :title, @course.name %>
+<br>
+<h1 class="text-center text-success">
+  <b><%= t("views.course").capitalize %> : </b><%= @course.name %>
+</h1>
+
+<h2 class="text-center">
+  <span class="label label-<%= @course.closed ? "danger" : "success" %>">
+    <%= t @course.closed ? "views.messages.closed" : "views.messages.opening" %>
+  </span>
+</h2>
+<hr>
+<div class="text-center">
+  <% @course.course_subjects.each do |course_subject| %>
+    <a href="#" class="btn btn-subject
+      <%= current_user.user_subjects.finished(course_subject.subject).any? ||
+      course_subject.closed ? "btn-danger" : "btn-success" %>">
+      <%= course_subject.subject.name %>
+      <br>
+      <%= pluralize course_subject.subject.date_duration, t("views.unit.day") %>
+    </a>
+    <span class="glyphicon glyphicon-arrow-right"></span>
+  <% end %>
+</div>
+<br>
+<div>
+  <div class="container">
+    <table class="table">
+      <tr>
+        <td class="text18px text-info col-md-2">
+          <b class="pull-right"><%= t "courses.description" %> :</b>
+        </td>
+        <td>
+          <%= @course.description %>
+        </td>
+      </tr>
+      <tr>
+        <td class="text18px text-info col-md-2">
+          <b class="pull-right">
+            <%= pluralize @course.subjects.count, t("courses.supervisor") %>:</b>
+        </td>
+        <td>
+          <% @course.supervisors.each do |supervisor| %>
+            <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
+            <%= link_to supervisor.name, supervisor %>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td class="text18px text-info col-md-2">
+          <b class="pull-right">
+            <%= pluralize @course.users.count, t("trainee").capitalize %>:</b>
+        </td>
+        <td>
+          <% @course.users.each do |user| %>
+            <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
+            <%= link_to user.name, user %>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td class="text18px text-info col-md-2">
+          <b class="pull-right"><%= t "course.start_date" %> :</b>
+        </td>
+        <td>
+          <%= @course.created_at.strftime Settings.date_format %>
+        </td>
+      </tr>
+      <tr>
+        <td class="text18px text-info col-md-2">
+          <b class="pull-right"><%= t "course.time_duration" %> :</b>
+        </td>
+        <td>
+          <%= pluralize @course.date_duration, t("views.unit.day") %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -42,6 +42,11 @@ en:
     join_date: "Join date"
     participated_courses: "Participated courses"
     histories_of_courses: "Histories of courses"
+    finish: "Finish"
+    traning: "Traning"
+  button:
+    hide: "Hide"
+    show: "Show"
   helpers:
     base_title: "Framgia Test App System"
   views:
@@ -126,6 +131,7 @@ en:
       studying_courses: "Courses which you are the trainee"
       not_supervisor: "You are not the supervisor of any courses"
       not_trainee: "You are not the trainee of any courses"
+      start_date: "start date"
     unit:
       hour: "hour"
       day: "day"

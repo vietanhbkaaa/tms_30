@@ -12,8 +12,4 @@ class Subject < ActiveRecord::Base
     reject_if: proc {|attribute| attribute[:name].blank?}
   validates :name, presence: Settings.subjects.is_present,
     length: {minimum: Settings.subjects.min_c, maximum: Settings.subjects.max_c}
-
-  def admin_update_subject user
-    created_activity "update", user_id, self.id, self.name
-  end
 end

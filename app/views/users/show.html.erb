@@ -8,6 +8,7 @@
     <% if @user.activities.any? %>
       <% @activities.each do |activity| %>
         <br>
+        <%= activity.created_at.strftime Settings.date_format %>
         <%= activity.type_action %>
         <%= activity.content %>
         <%= t "views.messages.have_id" %>

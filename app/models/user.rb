@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
       ReportAtEndOfDays.perform_async supervisor.id
     end
   end
+
+  def classmate? user
+    course = self.courses.active_course.first
+    course.users.include? user unless course.nil?
+  end
 end

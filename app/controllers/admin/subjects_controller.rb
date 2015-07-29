@@ -2,8 +2,10 @@ class Admin::SubjectsController < ApplicationController
   before_action :init_subject, only: [:edit, :update, :destroy]
 
   def index
-    @subjects = Subject.recent.paginate page: params[:page],
+    @q = Subject.ransack params[:q]
+    @subjects = @q.result(distinct: true).paginate page: params[:page],
       per_page: Settings.subjects.per_page
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new

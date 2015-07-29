@@ -1,0 +1,11 @@
+<%= search_form_for [:admin, @q], method: :get do |f| %>
+  <div class="row col-md-6">
+    <br>
+    <%= f.label :name, class: "form-control" %>
+    <%= f.search_field :name_cont %>
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+    <%= f.submit t("views.actions.search"), class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -2,8 +2,10 @@ class Admin::CoursesController < ApplicationController
   before_action :init_course, only: [:show, :destroy]
 
   def index
-    @courses = Course.recent.paginate page: params[:page],
+    @q = Course.ransack params[:q]
+    @courses = @q.result(distinct: true).paginate page: params[:page],
       per_page: Settings.courses.per_page
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new

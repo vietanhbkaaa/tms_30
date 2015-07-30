@@ -33,6 +33,8 @@
   </aside>
   <aside class="col-md-4">
     <br>
-    <%= link_to t("views.messeager.create_new_user"), new_admin_user_path, class: "btn btn-primary" %>
+    <%= link_to t("views.messeager.create_new_user"), new_admin_user_path,
+      class: "btn btn-primary" %>
+    <%= render "shared/search_form" %>
   </aside>
 </div>

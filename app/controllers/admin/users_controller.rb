@@ -2,8 +2,10 @@ class Admin::UsersController < ApplicationController
   before_action :init_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.recent.paginate page: params[:page],
+    @q = User.ransack params[:q]
+    @users = @q.result(distinct: true).paginate page: params[:page],
       per_page: Settings.subjects.users.per_page
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new

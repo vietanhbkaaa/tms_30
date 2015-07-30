@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  before_action :init_user, only: [:edit, :update, :show]
+  before_action :init_user, only: [:show, :edit, :update]
+
+  def show
+    @activities = @user.activities.recent.paginate page: params[:page],
+      per_page: Settings.activities.per_page
+  end
 
   def update
     if @user.update_attributes user_params

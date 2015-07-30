@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Logs
+
   devise :database_authenticatable, :rememberable, :trackable, :validatable
   has_many :user_courses, dependent: :destroy
   has_many :supervisor_courses, dependent: :destroy

@@ -2,15 +2,19 @@ class UserCourse < ActiveRecord::Base
   belongs_to :user
   belongs_to :course
 
-  after_create :supervisor_assign_trainee_activity
-  before_destroy :supervisor_remove_trainee_activity
+  after_create :init_user_subjects
+  after_destroy :remove_user_subjects
 
   private
-  def supervisor_assign_trainee_activity
-    create_activity "assign", self.user_id, self.user_id, self.name
+  def init_user_subjects
+    self.course.subjects.each do |subject|
+      UserSubject.create user_id: self.user_id, subject_id: subject.id
+    end
   end
 
-  def supervisor_remove_trainee_activity
-    create_activity "remove", self.user_id, self.user_id, self.name
+  def remove_user_subjects
+    self.course.subjects.each do |subject|
+      UserSubject.find_by(user_id: self.user_id, subject_id: subject.id).destroy
+    end
   end
 end

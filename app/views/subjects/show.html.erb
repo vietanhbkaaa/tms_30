@@ -1,0 +1,60 @@
+<% provide :title, "#{@course.name} > #{@user_subject.subject.name}" %>
+<h2>
+  <%= link_to @course.name, @course %>
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  <span class="text18px"><%= @user_subject.subject.name %></span>
+</h2>
+<br>
+<div>
+  <table class="table">
+    <tr>
+      <td class="text18px text-info col-md-2">
+        <b class="pull-right">
+          <%= t "messages.subjects.description" %> : 
+        </b>
+      </td>
+      <td>
+        <%= @user_subject.subject.description %>
+      </td>
+    </tr>
+    <tr>
+      <td class="text18px text-info col-md-2">
+        <b class="pull-right">
+          <%= t "messages.subjects.time_duration" %> : 
+        </b>
+      </td>
+      <td >
+        <%= pluralize @user_subject.subject.date_duration, t("views.unit.day") %>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user_subject, url: [@course, @user_subject.subject] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="field">
+        <table class="table"> 
+          <tbody>
+            <%= f.fields_for :user_tasks do |builder| %>
+              <tr>
+                <td class="col-md-1">
+                  <%= builder.check_box :finished, checked: builder.object.finished?,
+                    disabled: builder.object.finished? %>
+                </td>
+                <td>
+                  <span class="label <%= builder.object.finished ?
+                    "label-success" : "label-danger" %>">
+                    <%= builder.object.task.name %>
+                  </span>
+                  <span><%= builder.object.task.description %></span>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= f.submit t("views.actions.finish"), class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

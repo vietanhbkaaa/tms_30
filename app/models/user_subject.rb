@@ -1,7 +1,11 @@
 class UserSubject < ActiveRecord::Base
+  VALUE_FOR_REJECT = "0"
   belongs_to :user
   belongs_to :subject
-  scope :finished, ->(subject){where subject_id: subject.id, finished: true}
+  has_many :user_tasks
+  accepts_nested_attributes_for :user_tasks,
+    reject_if: proc {|attribute| attribute[:finished] == VALUE_FOR_REJECT}
+  scope :finished, ->subject{where subject_id: subject.id, finished: true}
 
   after_create :init_user_tasks
   after_destroy :remove_user_tasks
@@ -9,13 +13,13 @@ class UserSubject < ActiveRecord::Base
   private
   def init_user_tasks
     self.subject.tasks.each do |task|
-      UserTask.create user_id: self.user_id, task_id: task.id
+      UserTask.create user_subject_id: self.id, task_id: task.id
     end
   end
 
   def remove_user_tasks
     self.subject.tasks.each do |task|
-      UserTask.find_by(user_id: self.user_id, task_id: task.id).destroy
+      UserTask.find_by(user_subject_id: self.id, task_id: task.id).destroy
     end
   end
 end

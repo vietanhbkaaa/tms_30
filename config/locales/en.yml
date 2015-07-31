@@ -72,6 +72,7 @@ en:
       add: "Add"
       search: "Search"
       manage: "Manage"
+      finish: "Finish !"
     messages:
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"

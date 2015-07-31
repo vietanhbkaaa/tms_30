@@ -8,8 +8,13 @@ Rails.application.routes.draw do
     resources :activities, only: [:index, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update]
-  resources :courses, only: :show
+  namespace :supervisor do
+    resources :courses, only: :show do
+      resource :assign_subjects, only: [:edit, :update]
+      resource :assign_trainees, only: [:edit, :update]
+      resource :assign_supervisors, only: [:edit, :update]
+    end
+  end
 
   devise_for :users, path: "", path_names: {
     sign_in: "login",
@@ -18,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   resources :courses, only: :show
-
+  
   root "static_pages#home"
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :supervisor do
-    resources :courses, only: :show do
+    resources :courses, except: [:new, :create] do
       resource :assign_subjects, only: [:edit, :update]
       resource :assign_trainees, only: [:edit, :update]
       resource :assign_supervisors, only: [:edit, :update]

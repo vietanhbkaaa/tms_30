@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      short_date: "%d/%m/%Y"
   users:
     id: "ID"
     name: "Name"
@@ -103,6 +106,11 @@ en:
       update_course_subject: "Update the course's subjects"
       update_course_trainees: "Update the course's trainees"
       update_course_supervisors: "Update the course's supervisors"
+      hello_name: "Hello, %{name} !"
+      managing_courses: "Courses which you are the supervisor"
+      studying_courses: "Courses which you are the trainee"
+      not_supervisor: "You are not the supervisor of any courses"
+      not_trainee: "You are not the trainee of any courses"
     unit:
       hour: "hour"
       day: "day"
@@ -120,6 +128,9 @@ en:
     name_placeholder: "Enter the task name ..."
     description_placeholder: "What is this task's purpose ?"
   courses:
+    status:
+      open: "OPEN"
+      close: "CLOSE"
     supervisor: "Supervisor"
     name: "Name"
     information: "Information"

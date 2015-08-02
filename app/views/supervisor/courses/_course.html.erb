@@ -1,6 +1,6 @@
 <tr>
   <td class="text-center">
-    <b><%= link_to course.name, admin_course_path(course) %></b><br>
+    <b><%= link_to course.name, supervisor_course_path(course) %></b><br>
     <%= pluralize course.course_subjects.count, t("views.subject") %><br>
     <%= pluralize course.user_courses.count, t("views.user") %>
   </td>
@@ -15,9 +15,8 @@
     <span class="badge"><%= t "views.messages.closed" if course.closed? %></span>
   </td>
   <td class="text-center">
-    <%= link_to "", admin_course_path(course), method: :delete,
+    <%= link_to "", supervisor_course_path(course), method: :delete,
       data: {confirm: t("views.messages.del_confirm_msg")},
       class: "glyphicon glyphicon-remove" %>
   </td>
-  <td><%= link_to "", "#", class: "glyphicon glyphicon-edit" %></td>
 </tr>

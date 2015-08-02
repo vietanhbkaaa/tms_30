@@ -30,10 +30,24 @@ class Course < ActiveRecord::Base
     has_trainee?(user) || has_supervisor?(user)
   end
 
+  def expired_date
+    self.created_at + date_duration.day
+  end
+
   def self.send_all_courses_info
     Course.all.each do |course|
       course.supervisors.each do |supervisor|
         CourseMailer.course_info(course, supervisor).deliver_now
+      end
+    end
+  end
+
+  def self.notify_will_be_expired
+    Course.all.each do |course|
+      if course.expired_date - Time.now <= 2.days
+        course.supervisors.each do |supervisor|
+          CourseMailer.course_will_expire(course, supervisor).deliver_now
+        end
       end
     end
   end

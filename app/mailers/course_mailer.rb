@@ -5,4 +5,10 @@ class CourseMailer < ApplicationMailer
     @users = course.users
     mail to: receiver.email, subject: t("mail.subject.course_info")
   end
+
+  def course_will_expire course, receiver
+    @receiver = receiver
+    @course = course
+    mail to: receiver.email, subject: t("mail.subject.course_will_expire")
+  end
 end

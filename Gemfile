@@ -36,6 +36,8 @@ gem "will_paginate", "~> 3.0.4"
 gem "cancancan"
 gem "whenever", require: false
 gem "sidekiq"
+gem "daemons"
+gem "delayed_job_active_record"
 # Use Unicorn as the app server
 # gem "unicorn"
 

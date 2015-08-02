@@ -1,0 +1,4 @@
+<h1><%= t "views.messages.hello_name", name: @receiver.name %></h1>
+<span><%= t "views.messages.course_will_expire",
+  name: @course.name, time: l(@course.expired_date, format: :full_time) %>
+</span>

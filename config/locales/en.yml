@@ -23,11 +23,16 @@ en:
   time:
     formats:
       short_date: "%d/%m/%Y"
+      full_time: "%d/%m/%Y %H:%M:%S"
   mail:
     subject:
       course_info: "Your course infomation"
       assigned_into_course: "You have just been assigned into a course"
       removed_from_course: "You have just been kicked out from the course"
+      course_will_expire: "Your course will be expired soon"
+    course:
+      subject:
+        before_expiring: "You course will be expire soon"
   users:
     id: "ID"
     name: "Name"
@@ -82,6 +87,7 @@ en:
       manage: "Manage"
       finish: "Finish !"
     messages:
+      course_will_expire: "Your course %{name} will be expired on %{time}"
       removed_from_course: "You have just been kicked out from the course"
       assigned_into_course: "You have just been assigned into a course"
       course_name: "Course name"

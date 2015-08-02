@@ -34,6 +34,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "devise"
 gem "will_paginate", "~> 3.0.4"
 gem "cancancan"
+gem "whenever", require: false
 # Use Unicorn as the app server
 # gem "unicorn"
 
@@ -49,4 +50,5 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
+  gem "letter_opener"
 end

@@ -1,0 +1,9 @@
+<h1><%= t "views.messages.hello_name", name: @receiver.name %></h1>
+<span><%= t "views.messages.course_name" %> : <%= @course.name %></span>
+(<%= t @course.closed ? "views.messages.closed" : "views.messages.opening" %>)
+<h3><%= t "views.messages.list_of_trainees" %></h3>
+<ol>  
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ol>

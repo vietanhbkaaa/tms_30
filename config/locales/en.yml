@@ -23,6 +23,9 @@ en:
   time:
     formats:
       short_date: "%d/%m/%Y"
+  mail:
+    subject:
+      course_info: "Your course infomation"
   users:
     id: "ID"
     name: "Name"
@@ -77,6 +80,8 @@ en:
       manage: "Manage"
       finish: "Finish !"
     messages:
+      course_name: "Course name"
+      list_of_trainees: "List of trainees"
       send_reset_pw: "Send me reset password instructions"
       min_chars: "characters minimum"
       welcome_admin: "Welcome to TMS's dashboard !"

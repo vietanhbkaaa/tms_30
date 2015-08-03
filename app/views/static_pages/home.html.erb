@@ -1,7 +1,41 @@
 <% provide :title, t("views.pages.home") %>
-<div class="text-center">
-  <h1>
-    <strong><%= t "views.pages.welcome" %></strong>
-  </h1>
-  <h2><%= t "views.pages.notice" %></h2>
+
+<div class="container">
+  <h2 class="text-center text-success">
+    <b><%= t "views.messages.hello_name", name: current_user.name %></b>
+  </h2>
+  <div class="col-md-5">
+    <% if current_user.managing_courses.any? %>
+      <h3 class="text-danger">
+        <%= t "views.messages.managing_courses" %>
+      </h3>
+      <table class="table">
+        <% current_user.managing_courses.each_with_index do |managing_course, index| %>
+          <tr>
+            <td>
+              <%= index + 1 %>. <%= link_to managing_course.name, managing_course %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <%= link_to t("views.actions.manage"), supervisor_courses_path %>
+    <% else %>
+      <h3><%= t "views.messages.not_trainee" %></h3>
+    <% end %>
+
+    <% if current_user.courses.any? %>
+      <h3><%= t "views.messages.studying_courses" %></h3>
+      <table class="table">
+        <% current_user.courses.each_with_index do |course, index| %>
+          <tr>
+            <td>
+              <%= index + 1 %>. <%= link_to course.name, course %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <h3><%= t "views.messages.not_trainee" %></h3>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,17 @@
+<% provide :title, t("views.pages.admin_courses") %>
+<h2><%= t "views.pages.admin_courses" %></h2>
+<br>
+<br>
+<div class="row text-success">
+  <table class="table">
+    <tr>
+      <th class="text-center col-md-2"><%= t "courses.name" %></th>
+      <th class="text-center"><%= t "views.messages.detail" %></th>
+      <th class="text-center col-md-1"><%= t "views.courses.start_date" %></th>
+      <th class="text-center"><%= t "courses.time_duration" %></th>
+      <th class="text-center"><input type="checkbox" id="check-all"></th>
+    </tr>
+    <%= render @courses %>
+  </table>
+  <%= will_paginate %>
+</div>

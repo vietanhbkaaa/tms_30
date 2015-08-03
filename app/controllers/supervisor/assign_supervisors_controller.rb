@@ -9,7 +9,7 @@ class Supervisor::AssignSupervisorsController < ApplicationController
   def update
     if @course.update course_params
       flash[:success] = t "views.messages.update_successfully"
-      redirect_to @course
+      redirect_to [:supervisor, @course]
     else
       @users = User.all
       render :edit

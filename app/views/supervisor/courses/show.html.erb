@@ -4,10 +4,14 @@
     <b><%= t("views.course").capitalize %> : </b><%= @course.name %>
   </h1>
   <h2 class="text-center">
-    <span class="label label-<%= @course.closed ? 'danger' : 'success' %>">
+    <span class="label label-<%= @course.closed ? "danger" : "success" %>">
       <%= t @course.closed ? "views.messages.closed" : "views.messages.opening" %>
     </span>
   </h2>
+  <h3 class="text-center">
+    <%= link_to "",edit_supervisor_course_path(@course),
+      class: "glyphicon glyphicon-edit" %>
+  </h3>
   <table class="table">
     <tr>
       <td class="size18px text-info col-md-2">
@@ -25,9 +29,12 @@
       <td>
         <% @course.supervisors.each do |supervisor| %>
           <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
-          <%= link_to supervisor.name, "#" %>
+          <%= link_to supervisor.name, supervisor %>
           &nbsp; &nbsp; &nbsp; &nbsp;
         <% end %>
+        <%= link_to t("views.actions.manage"),
+          edit_supervisor_course_assign_supervisors_path(@course),
+          class: "glyphicon glyphicon-cog pull-right" %>
       </td>
     </tr>
     <tr>
@@ -38,9 +45,12 @@
       <td>
         <% @course.users.each do |user| %>
           <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
-          <%= link_to user.name, "#" %>
+          <%= link_to user.name, user %>
           &nbsp; &nbsp; &nbsp; &nbsp;
         <% end %>
+        <%= link_to t("views.actions.manage"),
+          edit_supervisor_course_assign_trainees_path(@course),
+          class: "glyphicon glyphicon-cog pull-right" %>
       </td>
     </tr>
     <tr>
@@ -53,6 +63,9 @@
           <%= link_to subject.name, "#" %>
           &nbsp; &nbsp; &nbsp; &nbsp;
         <% end %>
+        <%= link_to t("views.actions.manage"),
+          edit_supervisor_course_assign_subjects_path(@course),
+          class: "glyphicon glyphicon-cog pull-right" %>
       </td>
     </tr>
     <tr>

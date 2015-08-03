@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:show, :edit, :update]
-  resources :courses, only: :show
+  resources :courses, only: :show do
+    resources :subjects, only: [:show, :update]
+  end
   
   root "static_pages#home"
   get "help" => "static_pages#help"

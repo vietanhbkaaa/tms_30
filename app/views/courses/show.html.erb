@@ -12,9 +12,10 @@
 <hr>
 <div class="text-center">
   <% @course.course_subjects.each do |course_subject| %>
-    <a href="#" class="btn btn-subject
+    <a href="<%= course_subject_path(@course, course_subject.subject) %>"
+      class="btn btn-subject
       <%= current_user.user_subjects.finished(course_subject.subject).any? ||
-      course_subject.closed ? "btn-danger" : "btn-success" %>">
+        course_subject.closed ? "btn-danger" : "btn-success" %>">
       <%= course_subject.subject.name %>
       <br>
       <%= pluralize course_subject.subject.date_duration, t("views.unit.day") %>

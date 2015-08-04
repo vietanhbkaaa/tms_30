@@ -29,4 +29,12 @@ class Course < ActiveRecord::Base
   def has_member? user
     has_trainee?(user) || has_supervisor?(user)
   end
+
+  def self.send_all_courses_info
+    Course.all.each do |course|
+      course.supervisors.each do |supervisor|
+        CourseMailer.course_info(course, supervisor).deliver_now
+      end
+    end
+  end
 end

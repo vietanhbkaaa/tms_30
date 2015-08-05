@@ -35,6 +35,7 @@ gem "devise"
 gem "will_paginate", "~> 3.0.4"
 gem "cancancan"
 gem "whenever", require: false
+gem "sidekiq"
 # Use Unicorn as the app server
 # gem "unicorn"
 

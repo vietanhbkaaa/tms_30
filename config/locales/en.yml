@@ -26,6 +26,8 @@ en:
   mail:
     subject:
       course_info: "Your course infomation"
+      assigned_into_course: "You have just been assigned into a course"
+      removed_from_course: "You have just been kicked out from the course"
   users:
     id: "ID"
     name: "Name"
@@ -80,6 +82,8 @@ en:
       manage: "Manage"
       finish: "Finish !"
     messages:
+      removed_from_course: "You have just been kicked out from the course"
+      assigned_into_course: "You have just been assigned into a course"
       course_name: "Course name"
       list_of_trainees: "List of trainees"
       send_reset_pw: "Send me reset password instructions"

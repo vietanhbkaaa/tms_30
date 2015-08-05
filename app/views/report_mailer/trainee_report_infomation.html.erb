@@ -1,0 +1,8 @@
+<%= t "views.messages.hello_name", name: @receiver.name %>
+<% @receiver.managing_courses.each do |managing_course| %>
+  <% managing_course.users.each do |user| %>
+    <% user.activities.reporting_news.each do |report_new| %>
+      <%= user.name %> <%= report_new.content %>
+    <% end %>
+  <% end %>
+<% end %>

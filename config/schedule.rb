@@ -18,10 +18,14 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.month, at: "end of the month at 6:00am" do
+every :month, at: "end of the month at 6:00am" do
   runner "Course.send_all_courses_info"
 end
 
-every :day do
+every :day, at: "6:00am" do
   runner "Course.notify_will_be_expired"
+end
+
+every :day, at: "11:00pm" do
+  runner "User.send_trainees_report"
 end

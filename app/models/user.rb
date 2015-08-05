@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
   has_many :courses, through: :user_courses
   has_many :managing_courses, through: :supervisor_courses
   scope :recent, ->{order created_at: :desc}
+  scope :supervisors, ->{where("id in (SELECT user_id FROM supervisor_courses)")}
+
+  def self.send_trainees_report
+    User.supervisors.each do |supervisor|
+      ReportAtEndOfDays.perform_async supervisor.id
+    end
+  end
 end

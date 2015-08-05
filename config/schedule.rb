@@ -21,3 +21,7 @@
 every 1.month, at: "end of the month at 6:00am" do
   runner "Course.send_all_courses_info"
 end
+
+every :day do
+  runner "Course.notify_will_be_expired"
+end

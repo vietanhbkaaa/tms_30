@@ -9,6 +9,7 @@ class Course < ActiveRecord::Base
   has_many :supervisors, through: :supervisor_courses
   has_many :tasks, through: :subjects
   scope :recent, ->{order created_at: :desc}
+  scope :active_course, ->{where "closed = ?", Settings.courses.active}
 
   validates :name, presence: Settings.courses.is_present,
     length: {minimum: Settings.courses.min_c, maximum: Settings.courses.max_c}

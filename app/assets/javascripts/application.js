@@ -18,3 +18,20 @@ $(document).ready(function(){
   last_btn = $(".btn-subject").last();
   last_btn.next("span").remove();
 });
+
+function hide_btn(){
+  $("button").click(function(){
+    $(this).siblings("div").hide();
+  });
+}
+
+function show_btn(){
+  $("button").click(function(){
+    $(this).siblings("div").show();
+  });
+}
+
+$(document).ready(function(){
+  hide_btn();
+  show_btn();
+});

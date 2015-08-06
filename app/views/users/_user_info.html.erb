@@ -28,3 +28,25 @@
     </div>
   </tr>
 </table>
+<div class="row col-md-4">
+  <% @user.user_subjects.each do |user_subject| %>
+    <div id="subject-<%= user_subject.id %>">
+      <h2><%= user_subject.subject.name %></h2>
+      <%= t("views.messages.start_date") %> <%= user_subject.created_at.strftime(Settings.date_format) %>-
+      <%= user_subject.updated_at.strftime(Settings.date_format) %>
+      <br>
+      <button onclick="hide_btn()"><%= t "button.hide" %></button>
+      <button onclick="show_btn()"><%= t "button.show" %></button>
+      <% user_subject.user_tasks.each do |user_task| %>
+        <div>
+          <td><br><%= user_task.task.name %></td>
+          <% if user_task.finished? %>
+            <%= link_to t("users.finish"), "", class: "btn btn-primary status-button" %>
+          <% else %>
+            <%= link_to t("users.training"), "", class: "btn btn-danger status-button" %>
+          <% end %>
+        </div>
+      <%end%>
+    </div>
+  <% end %>
+</div>

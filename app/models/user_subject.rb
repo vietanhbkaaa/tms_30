@@ -1,4 +1,5 @@
 class UserSubject < ActiveRecord::Base
+  include Logs
   VALUE_FOR_REJECT = "0"
   belongs_to :user
   belongs_to :subject
@@ -8,6 +9,7 @@ class UserSubject < ActiveRecord::Base
   scope :finished, ->subject{where subject_id: subject.id, finished: true}
 
   after_create :init_user_tasks
+  after_update :finished_subject_activity
   after_destroy :remove_user_tasks
 
   private
@@ -15,6 +17,10 @@ class UserSubject < ActiveRecord::Base
     self.subject.tasks.each do |task|
       UserTask.create user_subject_id: self.id, task_id: task.id
     end
+  end
+
+  def finished_subject_activity
+    create_activity Settings.logs.finished, user.id, self.id, subject.name
   end
 
   def remove_user_tasks

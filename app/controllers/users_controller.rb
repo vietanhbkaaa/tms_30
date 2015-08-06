@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :init_user, only: [:show, :edit, :update]
+  before_action :classmate!, only: :show
 
   def show
     @activities = @user.activities.recent.paginate page: params[:page],
@@ -18,6 +19,10 @@ class UsersController < ApplicationController
   private
   def init_user
     @user = User.find params[:id]
+  end
+
+  def classmate!
+    redirect_to root_path if (@user != current_user) && (!current_user.classmate? @user)
   end
 
   def user_params

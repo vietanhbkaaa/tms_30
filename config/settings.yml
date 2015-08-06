@@ -20,9 +20,11 @@ courses:
   is_present: true
   min_c: 2
   max_c: 255
+  active: false
 date_format: "%d/%m/%Y"
 option_lines: 10
 logs:
   create: "create"
   update: "update"
   delete: "delete"
+  finished: "finished"

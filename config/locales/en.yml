@@ -46,7 +46,7 @@ en:
     join_date: "Join date"
     participated_courses: "Participated courses"
     histories_of_courses: "Histories of courses"
-    finish: "Finish"
+    finished: "Finished"
     traning: "Traning"
   button:
     hide: "Hide"

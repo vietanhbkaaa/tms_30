@@ -26,5 +26,8 @@ option_lines: 10
 logs:
   create: "create"
   update: "update"
-  delete: "delete"
+  delete: "was delete"
   finished: "finished"
+  assigned: "was assigned"
+  remove: "was removed"
+  changed: "changed"

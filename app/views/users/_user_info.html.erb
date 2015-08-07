@@ -39,12 +39,19 @@
       <button onclick="show_btn()"><%= t "button.show" %></button>
       <% user_subject.user_tasks.each do |user_task| %>
         <div>
-          <td><br><%= user_task.task.name %></td>
-          <% if user_task.finished? %>
-            <%= link_to t("users.finish"), "", class: "btn btn-primary status-button" %>
-          <% else %>
-            <%= link_to t("users.training"), "", class: "btn btn-danger status-button" %>
-          <% end %>
+          <table class="table">
+            <tr>
+              <br>
+              <td class="col-md-4"><%= user_task.task.name %></td>
+              <% if user_task.finished? %>
+                <td class="col-md-4"><%= link_to t("users.finished"), "",
+                  class: "btn btn-primary status-button" %></td>
+              <% else %>
+                <td class="col-md-4"><%= link_to t("users.training"), "",
+                  class: "btn btn-danger status-button" %></td>
+              <% end %>
+            </tr>
+          </table>
         </div>
       <%end%>
     </div>

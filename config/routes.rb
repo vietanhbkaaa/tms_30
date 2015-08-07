@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :admin do
     root "dashboards#index"
     resources :subjects, except: [:show]
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
       resource :assign_subjects, only: [:edit, :update]
       resource :assign_trainees, only: [:edit, :update]
       resource :assign_supervisors, only: [:edit, :update]
+      resources :subjects, only: [:edit, :update]
     end
   end
 

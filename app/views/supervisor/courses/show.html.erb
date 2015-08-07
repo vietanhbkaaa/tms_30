@@ -58,9 +58,13 @@
         <b class="pull-right"><%= t "view.subject" %> :</b>
       </td>
       <td>
-        <% @course.subjects.each do |subject| %>
+        <% @course.course_subjects.each do |course_subject| %>
           <span class="glyphicon glyphicon-file text-info"></span>&nbsp;
-          <%= link_to subject.name, "#" %>
+          <%= link_to course_subject.subject.name,
+            edit_supervisor_course_subject_path(@course, course_subject.subject) %>
+          <span class="label <%= course_subject.closed ? "label-danger" : "label-success" %>">
+            <%= t course_subject.closed ? "status.finished" : "status.opening" %>
+          </span>
           &nbsp; &nbsp; &nbsp; &nbsp;
         <% end %>
         <%= link_to t("views.actions.manage"),

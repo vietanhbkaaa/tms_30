@@ -33,6 +33,10 @@ en:
     course:
       subject:
         before_expiring: "You course will be expire soon"
+  status:
+    closed: "CLOSED"
+    finished: "FINISHED"
+    opening: "OPENING"
   users:
     id: "ID"
     name: "Name"

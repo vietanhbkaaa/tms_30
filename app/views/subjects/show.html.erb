@@ -10,7 +10,7 @@
     <tr>
       <td class="text18px text-info col-md-2">
         <b class="pull-right">
-          <%= t "messages.subjects.description" %> : 
+          <%= t "messages.subjects.description" %> :
         </b>
       </td>
       <td>
@@ -20,7 +20,7 @@
     <tr>
       <td class="text18px text-info col-md-2">
         <b class="pull-right">
-          <%= t "messages.subjects.time_duration" %> : 
+          <%= t "messages.subjects.time_duration" %> :
         </b>
       </td>
       <td >
@@ -34,7 +34,7 @@
     <%= form_for @user_subject, url: [@course, @user_subject.subject] do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <div class="field">
-        <table class="table"> 
+        <table class="table">
           <tbody>
             <%= f.fields_for :user_tasks do |builder| %>
               <tr>

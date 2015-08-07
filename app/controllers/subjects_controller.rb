@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :init_course, only: [:show, :update]
   before_action :init_user_subject, only: [:show, :update]
+  before_action :init_course_subject, only: [:show, :update]
   load_and_authorize_resource :course
 
   def show
@@ -23,6 +24,11 @@ class SubjectsController < ApplicationController
 
   def init_user_subject
     @user_subject = UserSubject.find_by user_id: current_user.id,
+      subject_id: params[:id]
+  end
+
+  def init_course_subject
+    @course_subject = CourseSubject.find_by course_id: params[:course_id],
       subject_id: params[:id]
   end
 

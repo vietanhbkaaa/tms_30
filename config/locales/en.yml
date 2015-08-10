@@ -96,6 +96,7 @@ en:
       manage: "Manage"
       finish: "Finish !"
     messages:
+      not_permission: "Not permission !"
       course_will_expire: "Your course %{name} will be expired on %{time}"
       removed_from_course: "You have just been kicked out from the course"
       assigned_into_course: "You have just been assigned into a course"

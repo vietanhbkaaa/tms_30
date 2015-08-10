@@ -1,4 +1,5 @@
 class Admin::SubjectsController < ApplicationController
+  before_action :admin_user!
   before_action :init_subject, only: [:edit, :update, :destroy]
 
   def index

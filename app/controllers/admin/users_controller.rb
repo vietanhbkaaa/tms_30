@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  before_action :admin_user!
   before_action :init_user, only: [:edit, :update, :destroy]
 
   def index

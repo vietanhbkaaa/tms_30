@@ -1,4 +1,5 @@
 class Admin::CoursesController < ApplicationController
+  before_action :admin_user!
   before_action :init_course, only: [:show, :destroy]
 
   def index

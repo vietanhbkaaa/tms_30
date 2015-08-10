@@ -1,4 +1,5 @@
 class Admin::ActivitiesController < ApplicationController
+  before_action :admin_user!
   before_action :init_activity, only: :destroy
 
   def index

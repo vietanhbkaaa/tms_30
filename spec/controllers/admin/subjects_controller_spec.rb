@@ -1,4 +1,3 @@
-require "spec_helper"
 require "rails_helper"
 
 describe Admin::SubjectsController do
@@ -32,6 +31,7 @@ describe Admin::SubjectsController do
       before{post :create, subject: FactoryGirl.attributes_for(:subject)}
       it{expect(response).to have_http_status 302}
       it{expect(response).to redirect_to action: :index}
+      it{expect(flash[:success]).not_to be_nil}
     end
   end
 
@@ -39,5 +39,6 @@ describe Admin::SubjectsController do
     before{delete :destroy, id: subject.id}
     it{expect(response).to redirect_to action: :index}
     it{expect(response).to have_http_status 302}
+    it{expect(flash[:success]).not_to be_nil}
   end
 end

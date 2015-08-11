@@ -1,4 +1,3 @@
-require "spec_helper"
 require "rails_helper"
 
 describe Admin::CoursesController do
@@ -32,6 +31,7 @@ describe Admin::CoursesController do
       before{post :create, course: FactoryGirl.attributes_for(:course)}
       it{expect(response).to have_http_status 302}
       it{expect(response).to redirect_to action: :index}
+      it{expect(flash[:success]).not_to be_nil}
     end
   end
 
@@ -39,5 +39,6 @@ describe Admin::CoursesController do
     before{delete :destroy, id: course.id}
     it{expect(response).to redirect_to action: :index}
     it{expect(response).to have_http_status 302}
+    it{expect(flash[:success]).not_to be_nil}
   end
 end

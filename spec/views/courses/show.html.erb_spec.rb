@@ -21,7 +21,6 @@ describe "courses/show.html.erb" do
     it{is_expected.to have_content "Time Duration"}
     it{is_expected.to have_link course.subjects[0].name}
     it{is_expected.to have_link course.subjects[1].name}
-    it{is_expected.to have_no_content course.subjects[1].name}
   end
 
   context "when user is admin" do

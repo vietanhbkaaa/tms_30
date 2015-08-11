@@ -58,4 +58,5 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem "rspec-activemodel-mocks"
   gem "shoulda-matchers"
+  gem "capybara"
 end

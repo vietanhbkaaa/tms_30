@@ -20,7 +20,7 @@
       </table>
       <%= link_to t("views.actions.manage"), supervisor_courses_path %>
     <% else %>
-      <h3><%= t "views.messages.not_trainee" %></h3>
+      <h3><%= t "views.messages.not_supervisor" %></h3>
     <% end %>
 
     <% if current_user.courses.any? %>
